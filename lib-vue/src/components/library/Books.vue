@@ -5,7 +5,8 @@
         <el-card v-for="item in books.slice((currentPage-1)*pagesize,currentPage*pagesize)"
                  :key="item.id"
                  style="width: 135px;margin-bottom: 20px;height: 270px;float: left;margin-right: 15px" class="book"
-                 bodyStyle="padding:10px" shadow="hover">
+                 bodyStyle="padding:10px" shadow="hover"
+                 @onSubmit="loadBooks()">
           <div class="cover" @click="editBook(item)">
             <img :src="item.cover" alt="封面">
           </div>
@@ -17,7 +18,7 @@
           </div>
           <div class="author">{{item.author}}</div>
           <div @click="getBookDetail(item)">
-            <borrow-book style="float:left" ref="borrowbook"></borrow-book>
+            <borrow-book style="float:left"></borrow-book>
           </div>
           <el-tooltip effect="dark" 
                       placement="top-start"
@@ -29,10 +30,13 @@
                   <span>{{item.press}}</span>
                 </p>
                 <p slot="content" style="width: 300px" class="abstract">{{item.abs}}</p>
+                <p slot="content" style="font-size: 14px;margin-bottom: 6px;">余量 : {{item.cnt}}</p>
+                <p slot="content" style="font-size: 14px;margin-bottom: 6px;">赔付价格 : {{item.price}} 元 / 本</p>
                 <el-button type="success" round size="small" style="margin-left:3px">详情</el-button>
           </el-tooltip>
         </el-card>
       <edit-form @onSubmit="loadBooks()" ref="edit"></edit-form>
+      <borrow-book style="float:left" ref="borrowbook" class="borrowBook"></borrow-book>
     </el-row>
     <el-row style="margin-top:120px">
       <el-pagination
@@ -63,10 +67,11 @@
     },
     mounted() {
       this.loadBooks()
+      this.$refs.searchBar.placeholderString = "通过书名或作者搜索..."
     },
     methods: {
       loadBooks () {
-        var _this = this
+        let _this = this
         this.$axios.get('/books').then(resp => {
           if (resp && resp.status === 200) {
             _this.books = resp.data
@@ -75,10 +80,9 @@
       },
       handleCurrentChange(currentPage) {
         this.currentPage = currentPage
-        console.log(this.currentPage)
       },
       searchResult () {
-        var _this = this
+        let _this = this
         this.$axios
           .post('/search', {
             keywords: this.$refs.searchBar.keywords
@@ -127,9 +131,8 @@
         }
       },
       getBookDetail(item) {
-        console.log(this.$refs.borrowbook)
         this.$refs.borrowbook.dialogFormVisible = true
-        this.$refs.borrowbook.form = {
+        this.$refs.borrowbook.book = {
           id: item.id,
           cover: item.cover,
           title: item.title,
@@ -208,5 +211,9 @@
     color: #3377aa;
   }
 
+  .borrowBook{
+    position: absolute;
+    margin-left: -1000px;
+  }
 </style>
 

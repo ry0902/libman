@@ -18,6 +18,6 @@ public class MyWebConfigurer implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/api/file/**").addResourceLocations("file:" + "D:/项目开发/libman/images/");
+        registry.addResourceHandler("/api/file/**").addResourceLocations("file:" + "D:/项目开发/libman/libman/images/");
     }
 }

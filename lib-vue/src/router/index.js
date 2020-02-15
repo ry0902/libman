@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import AppIndex from '@/components/home/AppIndex'
 import Home from '@/components/Home'
 import LibraryIndex from '@/components/library/LibraryIndex'
+import BorrowManage from '@/components/borrowManage/BorrowManage'
 
 import test from '@/components/test'
 
@@ -34,6 +35,14 @@ const routes = [
         path: '/library',
         name: 'LibraryIndex',
         component: LibraryIndex,
+        meta: {
+          requireAuth: true
+        }
+      },
+      {
+        path: '/BorrowManage',
+        name: 'BorrowManage',
+        component: BorrowManage,
         meta: {
           requireAuth: true
         }

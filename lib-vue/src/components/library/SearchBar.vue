@@ -2,7 +2,7 @@
   <div style="margin-bottom: 30px;display: flex;margin-left:150px">
     <el-input
       @keyup.enter.native="searchClick"
-      placeholder="通过书名或作者搜索..."
+      :placeholder= placeholderString
       prefix-icon="el-icon-search"
       size="small"
       style="width: 400px;margin-right: 10px"
@@ -19,7 +19,8 @@
       return {
         keywords: '',
         books: [],
-        cardLoading: []
+        cardLoading: [],
+        placeholderString: ''
       }
     },
     methods: {

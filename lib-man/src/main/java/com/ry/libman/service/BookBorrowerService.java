@@ -31,4 +31,12 @@ public class BookBorrowerService {
         Borrower borrower = borrowerService.get(id);
         return bookBorrowerDao.findAllByBorrower(borrower);
     }
+
+    public List<BookBorrower> findByKey(String keywords){
+        return bookBorrowerDao.findByKeywords(keywords);
+    }
+
+    public List<BookBorrower> findByTime(String time){
+        return bookBorrowerDao.findAllByBtimeOrEtime(time);
+    }
 }
