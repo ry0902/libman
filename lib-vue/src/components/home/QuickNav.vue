@@ -1,8 +1,12 @@
 <template>
     <div class="quick-nav">
         <img src="../../assets/img/icon/icon2.png" alt="" class="monster">
-        <img src="../../assets/img/icon/icon5.png" alt="" class="readme">
-        <img src="../../assets/img/icon/icon6.png" alt="" class="logo">
+        <a href="https://github.com/ry0902/libman/blob/master/README.md" target="_Blank">
+          <img src="../../assets/img/icon/icon5.png" alt="" class="readme">
+        </a>
+        <a href="https://github.com/ry0902/libman.git" target="_Blank">
+          <img src="../../assets/img/icon/icon6.png" alt="" class="logo">
+        </a>
         <img src="../../assets/img/icon/icon7.png" alt="" class="spark">
         <div class="lang">
             <span>L.B.</span>
