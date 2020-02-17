@@ -1,8 +1,8 @@
 <template>
     <div>
         <el-card class="box-card">
-            <div style="font-size: 40px; color: azure;white-space: nowrap">Talk is nothing, show you my code.</div>
-            <a href="https://github.com/Antabot/White-Jotter" target="_blank">
+            <div style="font-size: 40px; color: azure;white-space: nowrap">Hey, bro! Don't you talk to me?</div>
+            <a href="https://github.com/ry0902/libman.git" target="_blank">
                 <img src="../../assets/img/icon/icon6.png" alt="" class="git-link">
             </a>
             <a href="http://blog.poorange.cn/" target="_blank">

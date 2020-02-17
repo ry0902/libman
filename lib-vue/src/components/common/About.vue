@@ -1,9 +1,9 @@
 <template>
   <div class="footer">
     <div style="border-top:1px #1F1F1F solid;">
-      <p class="alt" style="width:100%;color:#999; line-height:0">&copy; 版权所有：Evan-Nightly &nbsp;
+      <p class="alt" style="width:100%;color:#999; line-height:0">&copy; 版权所有：橘生淮南则为橘 &nbsp;
         <span>技术支持：</span>
-        <a href="###" target="_blank" style="color:#999;">Evan & MMK</a>
+        <a href="###" target="_blank" style="color:#999;">橘生淮南则为橘 & 高秃瓢</a>
       </p>
     </div>
   </div>

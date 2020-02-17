@@ -7,7 +7,7 @@
             :data="tableData"
             height="610"
             border
-            style="width: 1138px">
+            style="width: 1150px">
             <el-table-column
             prop="btime"
             label="借书日期"
@@ -40,7 +40,7 @@
             </el-table-column>
             <el-table-column
             label="操作"
-            width="100">
+            width="120">
             <template slot-scope="scope">
                 <el-button type="text" @click="editRow(scope.$index)">编辑</el-button>
                 <el-button type="text" @click="deleteRow(scope.$index)">删除</el-button>

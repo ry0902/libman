@@ -49,9 +49,9 @@
 <style scoped>
   .categories {
     position: fixed;
-    margin-left: 50%;
+    margin-left: 48%;
     left: -600px;
-    top: 100px;
+    top: 152px;
     width: 150px;
   }
 </style>

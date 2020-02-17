@@ -76,9 +76,4 @@ public class BookBorrowerController {
     public List<BookBorrower> findRow(@RequestBody Search search) throws Exception{
         return bookBorrowerService.findByKey(search.getKeywords());
     }
-
-    @RequestMapping(value = "api/findRowByTime", method = RequestMethod.POST)
-    public List<BookBorrower> findRowByTime(@RequestParam String time) throws Exception{
-        return bookBorrowerService.findByTime(time);
-    }
 }

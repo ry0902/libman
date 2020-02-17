@@ -6,12 +6,17 @@ import AppIndex from '@/components/home/AppIndex'
 import Home from '@/components/Home'
 import LibraryIndex from '@/components/library/LibraryIndex'
 import BorrowManage from '@/components/borrowManage/BorrowManage'
+import Personal from '@/components/personal/Personal'
 
 import test from '@/components/test'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '',
+    redirect: '/login'
+  },
   {
     path: '/login',
     name: 'Login',
@@ -40,9 +45,17 @@ const routes = [
         }
       },
       {
-        path: '/BorrowManage',
+        path: '/borrowManage',
         name: 'BorrowManage',
         component: BorrowManage,
+        meta: {
+          requireAuth: true
+        }
+      },
+      {
+        path: '/admin',
+        name: 'Personal',
+        component: Personal,
         meta: {
           requireAuth: true
         }

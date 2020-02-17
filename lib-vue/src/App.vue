@@ -14,7 +14,13 @@ export default {
   },
   data () {
     return {
-      isRouterAlive: true
+      isRouterAlive: true,
+       note: {
+            backgroundImage: "url(" + require("./assets/img/bg/naruto.jpg") + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "25px auto",
+            marginTop: "5px",
+        }
     }
   },
   methods: {

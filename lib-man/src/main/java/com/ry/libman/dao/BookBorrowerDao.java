@@ -12,7 +12,4 @@ public interface BookBorrowerDao extends JpaRepository<BookBorrower, Integer> {
 
     @Query(value = "select bb from BookBorrower bb where bb.book.title like %?1% or bb.borrower.name like %?1% or bb.btime like  %?1% or bb.etime like %?1%")
     public List<BookBorrower> findByKeywords(String keywords);
-
-    @Query(value = "select bb from BookBorrower bb where bb.btime =  ?1 or bb.etime = ?1")
-    public List<BookBorrower> findAllByBtimeOrEtime(String time);
 }

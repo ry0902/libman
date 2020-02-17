@@ -1,7 +1,7 @@
 <template>
   <el-card class="card-carousel">
     <el-carousel :interval="4000" arrow="always">
-      <el-carousel-item v-for="item in items" :key="item">
+      <el-carousel-item v-for="(item,index) in items" :key="index">
         <a :href = item.link target="_blank">
             <img :src= item.img  alt="" class="carousel_img">
         </a>
